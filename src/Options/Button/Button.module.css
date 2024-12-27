@@ -1,0 +1,10 @@
+.btn {
+    display: flex;
+    padding: 3px;
+    margin-right: 8px;
+    border: 2px solid #1e2120;
+    color: black;
+    text-align: center;
+
+    /* gap: 5px; */
+}

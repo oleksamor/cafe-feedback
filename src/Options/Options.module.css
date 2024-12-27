@@ -1,0 +1,5 @@
+.optns {
+    display: flex;
+    flex-direction: row;
+    text-align: start;
+}
