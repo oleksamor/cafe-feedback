@@ -5,10 +5,10 @@ import Button from "./Button/Button.jsx";
 const Options = () => {
   return (
     <div className={s.optns}>
-      <Button />
-      <Button />
-      <Button />
-      <Button />
+      <Button name="Good" />
+      <Button name="Neutral" />
+      <Button name="Bad" />
+      <Button name="Reset" />
     </div>
   );
 };
