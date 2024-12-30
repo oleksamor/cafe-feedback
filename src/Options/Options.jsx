@@ -1,16 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
 import s from "./Options.module.css";
-import Button from "./Button/Button.jsx";
 
-const Options = () => {
+const Options = ({ reviews, onUpdate, resetReviews }) => {
   return (
     <div className={s.optns}>
-      <Button name="Good" />
-      <Button name="Neutral" />
-      <Button name="Bad" />
-      <Button name="Reset" />
+      <button className={s.btn} onClick={() => onUpdate("good")}>
+        Good {reviews.good}
+      </button>
+      <button className={s.btn} onClick={() => onUpdate("neutral")}>
+        Neutral {reviews.neutral}
+      </button>
+      <button className={s.btn} onClick={() => onUpdate("bad")}>
+        Bad {reviews.bad}
+      </button>
+      <button className={s.btn} onClick={() => resetReviews}>
+        Reset
+      </button>
     </div>
   );
 };
 
 export default Options;
+
+// const [clicksBad, setClicksBad] = useState(0);
+// const [clicksGood, setClicksGood] = useState(0);
+// const [clicksNeutral, setClicksNeutral] = useState(0);
+
+// const handleClickGood = () => {
+//   setClicksGood(clicksGood + 1);
+// };
+
+// const handleClickBad = () => {
+//   setClicksBad(clicksBad + 1);
+// };
+
+// const handleClickNeutral = () => {
+//   setClicksNeutral(clicksNeutral + 1);
+// };
+
+// const handleClickReset = () => {
+//   setClicksBad(0);
+//   setClicksGood(0);
+//   setClicksNeutral(0);
+// };

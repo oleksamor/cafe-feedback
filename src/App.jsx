@@ -11,11 +11,30 @@ function App() {
     bad: 0,
   });
 
+  const resetReviews = () => {
+    return setReviews({
+      ...reviews,
+      good: 0,
+      neutral: 0,
+      bad: 0,
+    });
+  };
+
+  const updateFeedback = (feedbackType) => {
+    return setReviews({
+      ...reviews,
+      [feedbackType]: reviews[feedbackType] + 1,
+    });
+  };
   return (
     <div>
       <Description />
-      <Options />
-      <Feedback />
+      <Options
+        reviews={reviews}
+        onUpdate={updateFeedback}
+        resetReviews={resetReviews}
+      />
+      {/* <Feedback reviews={reviews} onUpdate={updateFeedback} /> */}
     </div>
   );
 }
